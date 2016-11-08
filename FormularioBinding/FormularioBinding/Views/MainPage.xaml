@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="FormularioBinding.MainPage"
+    xmlns:modelos= "using:FormularioBinding.Models"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FormularioBinding"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <modelos:clsListado/>
+    </Page.DataContext>
+
+    <Grid x:Name="gridGlobal">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer>
+            <ListView x:Name="lista" Grid.Column="0" Grid.Row="0">
+            
+            </ListView>
+        </ScrollViewer>
+        
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Nombre: " Grid.Column="0" Grid.Row="0"/>
+            <TextBox Grid.Column="1" Grid.Row="0"/>
+
+            <TextBlock Text="Apellidos: " Grid.Column="0" Grid.Row="1"/>
+            <TextBox Grid.Column="1" Grid.Row="1"/>
+
+            <TextBlock Text="Fecha de nacimiento: " Grid.Column="0" Grid.Row="2"/>
+            <TextBox Grid.Column="1" Grid.Row="2"/>
+
+            <TextBlock Text="Teléfono: " Grid.Column="0" Grid.Row="3"/>
+            <TextBox Grid.Column="1" Grid.Row="3"/>
+
+            <StackPanel Orientation="Vertical" Grid.Row="4" Grid.ColumnSpan="2">
+                <TextBlock Text="Dirección: "/>
+                <TextBox/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
