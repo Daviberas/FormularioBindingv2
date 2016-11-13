@@ -25,7 +25,14 @@
 
         <ScrollViewer>
             <ListView x:Name="lista" Grid.Column="0" Grid.Row="0" Margin="12" ItemsSource="{Binding listado}">
-                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Nombre}"/>
+                            <TextBlock Text="{Binding Apellidos}" Margin="4,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </ScrollViewer>
         
