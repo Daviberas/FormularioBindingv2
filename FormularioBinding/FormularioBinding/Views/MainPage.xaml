@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
 
         <ScrollViewer>
-            <ListView x:Name="lista" Grid.Column="0" Grid.Row="0" Margin="12" ItemsSource="{Binding listado}">
+            <ListView x:Name="lista" Grid.Column="0" Grid.Row="0" Margin="12" ItemsSource="{Binding listado}" SelectedItem="{Binding personaSeleccionada, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -36,7 +36,7 @@
             </ListView>
         </ScrollViewer>
         
-        <Grid Grid.Column="1" Grid.Row="0">
+        <Grid Grid.Column="1" Grid.Row="0" DataContext="{Binding personaSeleccionada,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -50,20 +50,20 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="Nombre: " Grid.Column="0" Grid.Row="0" Margin="12,8" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="0" Margin="12,8" MaxHeight="36" Text="{Binding personaSeleccionada.Nombre}"/>
+            <TextBox Grid.Column="1" Grid.Row="0" Margin="12,8" MaxHeight="36" Text="{Binding Nombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Text="Apellidos: " Grid.Column="0" Grid.Row="1" Margin="12,8" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="1" Margin="12,8" MaxHeight="36" Text="{Binding personaSeleccionada.Apellidos}"/>
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="12,8" MaxHeight="36" Text="{Binding Apellidos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Text="Fecha de nacimiento: " Grid.Column="0" Grid.Row="2" Margin="12,8" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="2" Margin="12,8" MaxHeight="36" Text="{Binding personaSeleccionada.FechaNac}"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Margin="12,8" MaxHeight="36" Text="{Binding FechaNac, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Text="Teléfono: " Grid.Column="0" Grid.Row="3" Margin="12,8" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="3" Margin="12,8" MaxHeight="36" Text="{Binding personaSeleccionada.Telefono}"/>
+            <TextBox Grid.Column="1" Grid.Row="3" Margin="12,8" MaxHeight="36" Text="{Binding Telefono, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
             <StackPanel Orientation="Vertical" Grid.Row="4" Grid.ColumnSpan="2">
                 <TextBlock Text="Dirección: " Margin="12,20,12,0"/>
-                <TextBox Margin="12,0" Text="{Binding personaSeleccionada.Direccion}" MinHeight="200" TextWrapping="Wrap"/>
+                <TextBox Margin="12,0" Text="{Binding Direccion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinHeight="200" TextWrapping="Wrap"/>
             </StackPanel>
         </Grid>
     </Grid>
