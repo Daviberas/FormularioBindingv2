@@ -38,32 +38,32 @@
         
         <Grid Grid.Column="1" Grid.Row="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Nombre: " Grid.Column="0" Grid.Row="0" Margin="12,8"/>
-            <TextBox Grid.Column="1" Grid.Row="0" Margin="12,8" Text="{Binding personaSeleccionada.Nombre}"/>
+            <TextBlock Text="Nombre: " Grid.Column="0" Grid.Row="0" Margin="12,8" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Grid.Row="0" Margin="12,8" MaxHeight="36" Text="{Binding personaSeleccionada.Nombre}"/>
 
-            <TextBlock Text="Apellidos: " Grid.Column="0" Grid.Row="1" Margin="12,8"/>
-            <TextBox Grid.Column="1" Grid.Row="1" Margin="12,8" Text="{Binding personaSeleccionada.Apellidos}"/>
+            <TextBlock Text="Apellidos: " Grid.Column="0" Grid.Row="1" Margin="12,8" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="12,8" MaxHeight="36" Text="{Binding personaSeleccionada.Apellidos}"/>
 
-            <TextBlock Text="Fecha de nacimiento: " Grid.Column="0" Grid.Row="2" Margin="12,8"/>
-            <TextBox Grid.Column="1" Grid.Row="2" Margin="12,8" Text="{Binding personaSeleccionada.FechaNac}"/>
+            <TextBlock Text="Fecha de nacimiento: " Grid.Column="0" Grid.Row="2" Margin="12,8" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Margin="12,8" MaxHeight="36" Text="{Binding personaSeleccionada.FechaNac}"/>
 
-            <TextBlock Text="Teléfono: " Grid.Column="0" Grid.Row="3" Margin="12,8"/>
-            <TextBox Grid.Column="1" Grid.Row="3" Margin="12,8" Text="{Binding personaSeleccionada.Telefono}"/>
+            <TextBlock Text="Teléfono: " Grid.Column="0" Grid.Row="3" Margin="12,8" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Grid.Row="3" Margin="12,8" MaxHeight="36" Text="{Binding personaSeleccionada.Telefono}"/>
 
             <StackPanel Orientation="Vertical" Grid.Row="4" Grid.ColumnSpan="2">
                 <TextBlock Text="Dirección: " Margin="12,20,12,0"/>
-                <TextBox Margin="12,0" Text="{Binding personaSeleccionada.Direccion}" TextWrapping="Wrap"/>
+                <TextBox Margin="12,0" Text="{Binding personaSeleccionada.Direccion}" MinHeight="200" TextWrapping="Wrap"/>
             </StackPanel>
         </Grid>
     </Grid>
