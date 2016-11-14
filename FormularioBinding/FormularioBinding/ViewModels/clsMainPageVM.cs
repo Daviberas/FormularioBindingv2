@@ -41,8 +41,6 @@ namespace FormularioBinding.ViewModels
             }
         }
 
-        
-
         protected void OnPropertyChanged(string name)
         {
             PropertyChangedEventHandler handler = PropertyChanged;

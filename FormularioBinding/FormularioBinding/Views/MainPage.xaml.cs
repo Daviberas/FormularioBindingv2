@@ -26,5 +26,14 @@ namespace FormularioBinding
         {
             this.InitializeComponent();
         }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            this.txtNombre.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            this.txtApellidos.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            this.txtFechaNac.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            this.txtTelefono.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            this.txtDireccion.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+        }
     }
 }

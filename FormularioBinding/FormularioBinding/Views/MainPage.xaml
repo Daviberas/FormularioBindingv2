@@ -14,17 +14,19 @@
     <Grid x:Name="gridGlobal" Background="{ThemeResource AppBarBackground}">
         
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer>
-            <ListView x:Name="lista" Grid.Column="0" Grid.Row="0" Margin="12" ItemsSource="{Binding listado}" SelectedItem="{Binding personaSeleccionada, Mode=TwoWay}">
+        <AppBarButton Name="btnGuardar" Icon="Save" Label="Guardar" Click="btnGuardar_Click"/>
+
+        <ScrollViewer Grid.Column="0" Grid.Row="1">
+            <ListView x:Name="lista" Margin="12" ItemsSource="{Binding listado}" SelectedItem="{Binding personaSeleccionada, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -36,7 +38,7 @@
             </ListView>
         </ScrollViewer>
         
-        <Grid Grid.Column="1" Grid.Row="0" DataContext="{Binding personaSeleccionada,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+        <Grid Grid.Column="1" Grid.Row="1" DataContext="{Binding personaSeleccionada}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -45,25 +47,25 @@
                 <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="8*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="Nombre: " Grid.Column="0" Grid.Row="0" Margin="12,8" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="0" Margin="12,8" MaxHeight="36" Text="{Binding Nombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Name="txtNombre" Grid.Column="1" Grid.Row="0" Margin="12,8" MaxHeight="36" Text="{Binding Nombre, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
 
             <TextBlock Text="Apellidos: " Grid.Column="0" Grid.Row="1" Margin="12,8" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="1" Margin="12,8" MaxHeight="36" Text="{Binding Apellidos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Name="txtApellidos" Grid.Column="1" Grid.Row="1" Margin="12,8" MaxHeight="36" Text="{Binding Apellidos, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
 
             <TextBlock Text="Fecha de nacimiento: " Grid.Column="0" Grid.Row="2" Margin="12,8" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="2" Margin="12,8" MaxHeight="36" Text="{Binding FechaNac, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Name="txtFechaNac" Grid.Column="1" Grid.Row="2" Margin="12,8" MaxHeight="36" Text="{Binding FechaNac, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
 
             <TextBlock Text="Teléfono: " Grid.Column="0" Grid.Row="3" Margin="12,8" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="3" Margin="12,8" MaxHeight="36" Text="{Binding Telefono, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Name="txtTelefono" Grid.Column="1" Grid.Row="3" Margin="12,8" MaxHeight="36" Text="{Binding Telefono, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
 
             <StackPanel Orientation="Vertical" Grid.Row="4" Grid.ColumnSpan="2">
                 <TextBlock Text="Dirección: " Margin="12,20,12,0"/>
-                <TextBox Margin="12,0" Text="{Binding Direccion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinHeight="200" TextWrapping="Wrap"/>
+                <TextBox Name="txtDireccion" Margin="12,0" Text="{Binding Direccion, Mode=TwoWay, UpdateSourceTrigger=Explicit}" MinHeight="160" TextWrapping="Wrap"/>
             </StackPanel>
         </Grid>
     </Grid>
