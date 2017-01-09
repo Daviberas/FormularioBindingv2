@@ -24,6 +24,7 @@
         </Grid.RowDefinitions>
 
         <AppBarButton Name="btnGuardar" Icon="Save" Label="Guardar" Click="btnGuardar_Click"/>
+        <AppBarButton Name="btnEliminar" Icon="Delete" Label="Eliminar" Click="btnEliminar_Click"/>
 
         <ScrollViewer Grid.Column="0" Grid.Row="1">
             <ListView x:Name="lista" Margin="12" ItemsSource="{Binding listado}" SelectedItem="{Binding personaSeleccionada, Mode=TwoWay}">
